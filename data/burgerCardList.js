@@ -1,0 +1,51 @@
+export const burgerCardList = [
+  {
+    id: 1,
+    img: "/../public/images/b4.jpg",
+    name: "burger one updated",
+    price: 25.7,
+    desc: "this is old cultural burger",
+  },
+  {
+    id: 2,
+    img: "/../public/images/wb2.jpg",
+    name: "burger two",
+    price: 23.7,
+    desc: "this is old cultural burger",
+  },
+  {
+    id: 3,
+    img: "/../public/images/wb3.jpeg",
+    name: "burger three",
+    price: 23.7,
+    desc: "this is old cultural burger",
+  },
+  {
+    id: 4,
+    img: "/../public/images/wb4.png",
+    name: "burger four",
+    price: 23.7,
+    desc: "this is old cultural burger",
+  },
+  {
+    id: 5,
+    img: "/../public/images/wb5.jpg",
+    name: "burger five",
+    price: 23.7,
+    desc: "this is old cultural burger",
+  },
+  {
+    id: 6,
+    img: "/../public/images/b4.jpg",
+    name: "burger six",
+    price: 23.7,
+    desc: "this is old cultural burger",
+  },
+  {
+    id: 7,
+    img: "/../public/images/b4.jpg",
+    name: "burger seven",
+    price: 23.7,
+    desc: "this is old cultural burger",
+  },
+];
