@@ -5,10 +5,16 @@ import burger from "../../public/images/b4.jpg";
 import burgerIcon from "../../public/images/burgerIcon.png";
 import { burgerData } from "../../data/singleBurger";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { addProduct } from "../../redux/cartSlice";
 
 export default function SingleBurger({ burger }) {
   const [size, setSize] = React.useState(0);
   const [price, setPrice] = React.useState(burger.prices[0]);
+  const [extraOpt, setExtraOpt] = React.useState([]);
+  const [quantity, setQuantity] = React.useState(1);
+
+  const dispatch = useDispatch();
 
   const changePrice = (number) => {
     setPrice(price + number);
@@ -25,11 +31,16 @@ export default function SingleBurger({ burger }) {
 
     if (checked) {
       changePrice(option.price);
-      // setExtras((prev) => [...prev, option]);
+      setExtraOpt((prev) => [...prev, option]);
     } else {
       changePrice(-option.price);
-      // setExtras(extras.filter((extra) => extra._id !== option._id));
+      setExtraOpt(extras.filter((extra) => extra._id !== option._id));
     }
+  };
+
+  // dispatch addProduct
+  const handleAddCart = () => {
+    dispatch(addProduct({ ...burger, extraOpt, price, quantity }));
   };
 
   return (
@@ -79,8 +90,15 @@ export default function SingleBurger({ burger }) {
 
           <div className={styles.chooseAmount}>
             <h3>choose amount</h3>
-            <input className={styles.amount} type="number" />
-            <button className={styles.btn}>Add to Cart</button>
+            <input
+              className={styles.amount}
+              type="number"
+              defaultValue={1}
+              onChange={(e) => setQuantity(e.target.value)}
+            />
+            <button className={styles.btn} onClick={handleAddCart}>
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>

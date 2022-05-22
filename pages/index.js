@@ -15,6 +15,7 @@ export default function Home({ burgerList }) {
       </Head>
       <BurgerSlide />
       <BurgerList burgerList={burgerList} />
+      <div>hello</div>
     </div>
   );
 }
